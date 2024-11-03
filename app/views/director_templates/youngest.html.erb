@@ -1,0 +1,11 @@
+<h1>Youngest director</h1>
+
+
+
+<% all_directors = Director.all.order({ :dob => :asc }) %>
+
+<% youngest_to_eldest = all_directors.reverse_order%>
+
+<% youngest = youngest_to_eldest.at(0) %>
+
+<p>The youngest director in our dataset right now is <%= youngest.name %>, born on <%= youngest.dob %>.</p>
